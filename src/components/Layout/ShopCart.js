@@ -13,6 +13,9 @@ const ShopCart = (props, itemId) => {
       <li key={Math.random()}>
         <div>{order.dish}</div>
         <div>{order.price} ₪</div>
+        <button onClick={props.deleteItemFromCart.bind(null, order.itemId)}>
+          Del
+        </button>
       </li>
     );
   });

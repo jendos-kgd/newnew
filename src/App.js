@@ -7,12 +7,17 @@ import Menu from "./components/Menu/Menu";
 function App() {
   const [cartOrders, setCartOrders] = useState([]);
 
-  
   const totalAmount = cartOrders.length;
 
   const addItemToCart = (item) => {
-    setCartOrders((artOrders) => {
+    setCartOrders((cartOrders) => {
       return [...cartOrders, item];
+    });
+  };
+
+  const deleteItemFromCart = (id) => {
+    setCartOrders((prevState) => {
+      return prevState.filter((order) => order.itemId !== id);
     });
   };
 
@@ -21,6 +26,7 @@ function App() {
       <Header
         cartOrders={cartOrders}
         totalAmount={totalAmount}
+        deleteItemFromCart={deleteItemFromCart}
       />
       <main>
         <Menu addItemToCart={addItemToCart} />

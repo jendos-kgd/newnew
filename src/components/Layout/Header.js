@@ -15,7 +15,7 @@ const Header = (props) => {
         <ShopCart
           cartOrders={props.cartOrders}
           totalAmount={props.totalAmount}
-          deleteOrder={props.deleteOrder}
+          deleteItemFromCart={props.deleteItemFromCart}
         />
       </header>
       <div className={classes["main-image"]}>
